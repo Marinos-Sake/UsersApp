@@ -1,12 +1,9 @@
 const express = require("express");
 const app = express();
 
-// app.get("/api/users", (req, resp) =>{
+app.use(express.json());
+const user = require('./routes/user.routes');
 
-// })
-
-// app.get("/api/users/user1", (req, resp) =>{
-
-// })
+app.use('/api/users', user)
 
 module.exports = app
