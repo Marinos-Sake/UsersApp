@@ -89,7 +89,9 @@ exports.update = async(req, resp) => {
     };
   
     try {
-      const result = await User.findOneAndUpdate({username: username}, updateUser, {new:true});
+      const result = await User.findOneAndUpdate({username: username}, //Πρώτο όρισμα: Ποιον χρήστη ψάχνουμε;
+        updateUser,  //Δεύτερο όρισμα: Ποιες τιμές θέλουμε να ενημερώσουμε;
+        {new:true}); //Τρίτο όρισμα: Επιστρέφει το νέο αντικείμενο αντί για το παλιό.
       resp.status(200).json({status:true, data:result});
     } catch (err) {
       console.log("Problem in updating user", err);
