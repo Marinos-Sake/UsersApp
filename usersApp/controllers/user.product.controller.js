@@ -25,3 +25,25 @@ exports.findOne = async(req, resp) => {
         resp.status(400).json({status: false, data: err})
     }
 }
+
+exports.create = async(req, resp) => {
+    console.log("Insert products to user")
+
+    const username = req.body.username
+    const products = req.body.products
+
+
+    try {
+        const result = await User.updateOne({username: username},
+            {
+                $push: {
+                    products: products
+                }
+            }
+        );
+        resp.status(200).json({status: true, data: result})
+    } catch (err) {
+        console.log("Problem in inserting product", err)
+        resp.status(400).json({status: false, data: err})
+    }
+}
