@@ -1,5 +1,6 @@
 const User = require('../models/user.model')
 const userService = require('../services/user.services')
+const bcrypt = require('bcrypt');
 
 exports.findALL = async(req, resp) => {
     console.log("Find all users from collection users")
@@ -44,12 +45,14 @@ exports.findOne = async(req, resp)=> {
 exports.create = async(req, resp) => {
     console.log("Create User");
 
-
     let data = req.body;
+
+    const saltorRounds = 10;
+    const hashedPassword = await bcrypt.hash(data.password, saltorRounds) 
 
     const newUser = new User({
         username: data.username,
-        password: data.password,
+        password: hashedPassword,
         name: data.name,
         surname: data.surname,
         email: data.email,
