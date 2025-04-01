@@ -69,27 +69,77 @@ exports.create = async(req, resp) => {
     }
 }
 
+
 exports.update = async(req, resp) => {
-    const username =  req.body.username;
-
-    console.log("User is updated", username)
-
+    const username = req.body.username;
+  
+    console.log("Update user with username", username);
+  
     const updateUser = {
-        name: req.body.name,
-        surname: req.body.surname,
-        email: req.body.email,
-        address: {
-            area: req.body.area,
-            road: req.body.road
-        }
-
+      name: req.body.name,
+      surname: req.body.surname,
+      email: req.body.email,
+      address: {
+        area: req.body.address.area,
+        road: req.body.address.road
+      }
+    };
+  
+    try {
+      const result = await User.findOneAndUpdate({username: username}, updateUser, {new:true});
+      resp.status(200).json({status:true, data:result});
+    } catch (err) {
+      console.log("Problem in updating user", err);
+      resp.status(400).json({status:false, data: err});
     }
+}
+
+
+exports.deleteByUsername = async(req, resp) => {
+    const username = req.params.username
+    console.log("Delete user with username", username);
 
     try {
-        const result = await User.findOneAndUpdate({username: username}, updateUser, {new: true})
-        resp.status(200).json({status: true, data: result});
+        const result = await User.findOneAndDelete({username: username})
+
+        if (!result) {
+            return resp.status(404).json({status: false, message: "User not found"});
+        }
+
+        resp.status(200).json({status: true, data: result})
+
+
+
     } catch (err) {
-        console.log("Problem in updating user", err)
+
+        console.log("Problem in deleting user", err);
+
         resp.status(400).json({status: false, data: err})
     }
+}
+
+
+
+exports.deleteByEmail = async(req, resp) => {
+    const username = req.params.username
+    const email = req.params.email
+    console.log("Delete user with email", email);
+
+    try {
+        const result = await User.findOneAndDelete({email: email})
+
+        if (!result) {
+            return resp.status(404).json({status: false, message: "User not found"});
+        }
+
+        resp.status(200).json({status: true, data: result})
+
+    } catch (err) {
+
+        console.log("Problem in deleting user", err);
+
+        resp.status(400).json({status: false, data: err})
+    }
+
+    //localhost:3001/api/users/test10 (user who want to delete "his username")/email/lakis@aueb.gr (user who want to delete with email)
 }
