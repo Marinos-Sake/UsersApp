@@ -3,11 +3,11 @@ const express = require('express')
 const router = express.Router();
 
 const userController = require('../controllers/user.controller');
-const authMiddleware = require('../middlewares/auth.middleware')
+const verifyToken = require('../middlewares/auth.middleware').verifyToken
 
 router.get('/', userController.findALL);
 router.get('/:username', userController.findOne)
-router.post('/',authMiddleware.verifyToken, userController.create)
+router.post('/', verifyToken, userController.create)
 router.patch('/:username', userController.update)
 router.delete('/:username', userController.deleteByUsername)
 router.delete('/:username/email/:email', userController.deleteByEmail)
