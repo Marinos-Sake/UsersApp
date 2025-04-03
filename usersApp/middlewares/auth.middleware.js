@@ -30,7 +30,7 @@ function verifyRoles(allowedRole) {
 
     const userRoles = req.user.roles
     
-    // const hasPermission = userRoles.some(role => allowedRole.includes(role));
+    
     const hasPermission = userRoles.includes(allowedRole)
 
     if (!hasPermission) {
