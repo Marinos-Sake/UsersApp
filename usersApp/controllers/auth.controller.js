@@ -9,16 +9,19 @@ exports.login = async (req, resp) => {
     const password = req.body.password;
 
     try {
-        const result = await User.findOne({username: username})
-
-        if (result && result.username === username && result.password === password) {
-            const token = authService.generateAccessToken(result)
-            resp.status(200).json({status: true, data: token})
+        const result = await User.findOne({username: username},{username:1, email:1, password:1, roles:1})
+        console.log("User", result);
+        const isMatch = await bcrypt.compare(password, result.password)
+        
+        // if (result && result.username === username && result.password === password){
+        if (result && result.username === username && isMatch){
+          const token = authService.generateAccessToken(result)
+          res.status(200).json({status: true, data: token});
         } else {
-            resp.status(404).json({status: false, data: "User not logged in"})
+          res.status(404).json({status: false, data: "user not logged in"});
         }
     } catch (err) {
-        console.log("Problem in logging", err)
-        resp.status(400).json({status: false, data: err})
+        console.log("Problem in logging", err);
+        res.status(400).json({status: false, data: err})
     }
 }

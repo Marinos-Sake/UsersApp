@@ -1,7 +1,7 @@
 const jwt = require('jsonwebtoken')
 
 function verifyToken(req, resp, next) {
-    const authHeader = req.authHeader['authorization']
+    const authHeader = req.header['authorization']
     const token = authHeader && authHeader.split(' ')[1]
 
     if (!token) {
@@ -13,7 +13,7 @@ function verifyToken(req, resp, next) {
     try {
         const decoded =jwt.verify(token, secret);
         
-        console.log(decoded);
+        console.log("DECODED", decoded);
         next()
     } catch (err) {
         return resp.status(403).json({status: false, data: err})
