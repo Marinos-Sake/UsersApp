@@ -2,6 +2,8 @@ const User = require('../models/user.model')
 const userService = require('../services/user.services')
 const bcrypt = require('bcrypt');
 
+const logger = require('../logger/logger')
+
 exports.findALL = async(req, resp) => {
     console.log("Find all users from collection users")
 
@@ -9,9 +11,11 @@ exports.findALL = async(req, resp) => {
         // const result = await User.find();
         const result = await userService.findAll();
         resp.status(200).json({status: true, data: result});
-
+        logger.info("INFO, Success in reading all users")
+        logger.warn("INFO, Success in reading all users")
     } catch(err) {
         console.log("Problem in reading users", err)
+        logger.error("ERROR, Problem in reading all users", err)
         
         resp.status(404).json({status: false, data: err})
     }
