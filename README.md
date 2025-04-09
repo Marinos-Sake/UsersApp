@@ -1,5 +1,5 @@
 # **Node.js**
- 
+
 **usersApp**
 
 **usersApp** is a Node.js application designed for efficient user management and authentication. This project serves as a robust backend solution for applications requiring user authentication, secure password management, and API integration. The app is built with modern technologies, ensuring high performance and scalability.
@@ -20,23 +20,21 @@
 
 ### **Setup and Installation**
 
+1. **Clone this repository:**  
+   `git clone https://github.com/yourusername/usersapp.git`
 
-Clone this repository:
-git clone 
+2. **Navigate into the project directory:**  
+   `cd usersapp`
 
-Navigate into the project directory:
-cd usersapp
+3. **Install dependencies:**  
+   `npm install`
 
-Install dependencies:
-npm install
+4. **Create a `.env` file for environment variables** (you can use `.env.sample` for a template).
 
-Create a .env file for environment variables (you can use .env.sample for a template).
+5. **Start the server:**
 
-Start the server:
+   - **For development:**  
+     `npm run dev`
 
-For development:
-npm run dev
-
-For production:
-npm start
-
+   - **For production:**  
+     `npm start`
