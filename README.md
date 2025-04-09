@@ -20,20 +20,23 @@
 
 ### **Setup and Installation**
 
-1. **Clone this repository:**
-git clone
 
-**2. Navigate into the project directory:**
+Clone this repository:
+git clone 
+
+Navigate into the project directory:
 cd usersapp
 
-**3. Install dependencies:**
+Install dependencies:
 npm install
 
-**4. Create a .env file for environment variables (you can use .env.sample for a template).**
+Create a .env file for environment variables (you can use .env.sample for a template).
 
-**5. Start the server:**
+Start the server:
+
 For development:
 npm run dev
 
 For production:
 npm start
+
