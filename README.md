@@ -19,12 +19,12 @@
 - **Swagger**: Provides interactive API documentation, making it easier to test and understand the API.
 
 ### **Setup and Installation**
+
 1. **Clone this repository:**
-   git clone
+    git clone
 
 **2. Navigate into the project directory:**
     cd usersapp
-    Install dependencies:
 
 **3. Install dependencies:**
     npm install
