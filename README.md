@@ -20,13 +20,7 @@
 
 ### **Setup and Installation**
 1. **Clone this repository:**
-   git clone https://github.com/yourusername/usersapp.git
-
-
-### **Setup and Installation**
-
-**1. Clone this repository:**
-   git clone https://github.com/yourusername/usersapp.git
+   git clone
 
 **2. Navigate into the project directory:**
     cd usersapp
