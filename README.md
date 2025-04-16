@@ -1,6 +1,4 @@
-# **Node.js**
-
-**usersApp**
+# **usersApp**
 
 **usersApp** is a Node.js application designed for efficient user management and authentication. This project serves as a robust backend solution for applications requiring user authentication, secure password management, and API integration. The app is built with modern technologies, ensuring high performance and scalability.
 
@@ -14,9 +12,19 @@
 ### **Technologies:**
 - **Node.js**: The application is built on Node.js, ensuring efficient asynchronous execution.
 - **Express.js**: A fast, minimal web framework that powers the app's HTTP server.
-- **MongoDB**: A NoSQL database used to store user data and application logs.
+- **MongoDB & Mongoose**: A NoSQL database used to store user data and application logs.
 - **JWT & Bcrypt**: For secure user authentication and password management.
-- **Swagger**: Provides interactive API documentation, making it easier to test and understand the API.
+- **Swagger UI & mongoose-to-swagger**: Provides interactive API documentation, making it easier to test and understand the API.
+- **Winston**: A versatile logging library used with daily rotation and MongoDB transport to persist logs.
+- **CORS**: Enables handling of cross-origin requests for seamless frontend-backend communication.
+- **dotenv**: Loads environment variables from a .env file for secure configuration management.
+- **Jest**: A powerful testing framework for running unit and integration tests.
+- **cross-env**: Ensures environment variables work consistently across Windows, macOS, and Linux.
+- **google-auth-library**: Provides tools to integrate with Google OAuth2 authentication if needed.
+
+
+
+
 
 ### **Setup and Installation**
 
@@ -38,3 +46,7 @@
 
    - **For production:**  
      `npm start`
+
+### **Access the Application**
+🔗 Base URL: http://localhost:3000
+📚 API Documentation (Swagger UI): http://localhost:3000/api-docs
