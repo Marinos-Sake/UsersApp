@@ -5,8 +5,8 @@ myapp2/
 myapp3/
 myapp4/
 .env
-
 logs/
+usersApp/descr.txt
 
 example1.js
 example2.js

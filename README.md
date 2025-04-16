@@ -48,5 +48,5 @@
      `npm start`
 
 ### **Access the Application**
-🔗 Base URL: http://localhost:3000
-📚 API Documentation (Swagger UI): http://localhost:3000/api-docs
+- 🔗 Base URL: http://localhost:3000
+- 📚 API Documentation (Swagger UI): http://localhost:3000/api-docs
