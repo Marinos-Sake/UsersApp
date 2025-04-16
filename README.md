@@ -37,7 +37,13 @@
 3. **Install dependencies:**  
    `npm install`
 
-4. **Create a `.env` file for environment variables** (you can use `.env.sample` for a template).
+4. **Set up environment variables:**
+   - Create a .env file in the root directory.
+
+   -  Use .env.sample as a template by copying its content:
+      `cp .env.sample .env`
+
+   - Then, fill in your actual credentials (MongoDB URI, JWT secret, Google OAuth credentials, etc.) inside the .env file.
 
 5. **Start the server:**
 
