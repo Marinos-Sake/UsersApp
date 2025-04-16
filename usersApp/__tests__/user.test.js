@@ -55,7 +55,7 @@ describe("Requests for /api/users", ()=>{
       'password': '12345',
       'name': 'test1313 name',
       'surname': 'test5 surname',
-      'email':'test1313@aueb.gr',
+      'email':'newname@aueb.gr',
       'address': {
         'area': 'area1',
         'road': 'road5'
@@ -66,16 +66,16 @@ describe("Requests for /api/users", ()=>{
     expect(res.body.status).toBeTruthy()
   })
 
-  it("POST Creates a user that exists", async() => {
+  it("POST Creates a user with same username", async() => {
     const res = await request(app)
       .post('/api/users')
       .set('Authorization', `Bearer ${token}`)
       .send({
         username: 'test1313',
         password: '12345',
-        name: 'new name',
-        surname: 'new surname',
-        email: 'new@aueb.gr',
+        name: 'pepas',
+        surname: 'surname pepas',
+        email: 'pepas@aueb.gr',
         address: {
           area: "xxx",
           road: 'yyy'
@@ -85,6 +85,46 @@ describe("Requests for /api/users", ()=>{
       expect(res.statusCode).toBe(400)
       expect(res.body.status).not.toBeTruthy()
   })
+
+  it ("POST Create a user with same email", async() => {
+    const res = await request(app)
+      .post('/api/users')
+      .set('Authorization', `Bearer ${token}`)
+      .send({
+        username: 'test1515',
+        password: '12345',
+        name: 'new name',
+        surname: 'new surname',
+        email: 'newname@aueb.gr',
+        address: {
+          area: "xxx",
+          road: 'yyy'
+        }
+      })
+
+      expect(res.statusCode).toBe(400)
+      expect(res.body.status).not.toBeTruthy()
+    })
+
+    it("POST Creates a user with empty name, surname, password", async() => {
+      const res = await request(app)
+        .post('/api/users')
+        .set('Authorization', `Bearer ${token}`)
+        .send({
+          username: 'test6',
+          password: '',
+          name: '',
+          surname:'',
+          email: 'test6@aueb.gr',
+          address: {
+            area: 'area23',
+            road: 'road23'
+          }
+        })
+        
+        expect(res.statusCode).toBe(400)
+        expect(res.body.status).not.toBeTruthy()
+    })
 });
 
 
