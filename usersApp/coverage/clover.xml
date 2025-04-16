@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1744811530782" clover="3.2.0">
-  <project timestamp="1744811530782" name="All files">
-    <metrics statements="268" coveredstatements="148" conditionals="29" coveredconditionals="11" methods="23" coveredmethods="11" elements="320" coveredelements="170" complexity="0" loc="268" ncloc="268" packages="7" files="13" classes="13"/>
+<coverage generated="1744813163700" clover="3.2.0">
+  <project timestamp="1744813163700" name="All files">
+    <metrics statements="268" coveredstatements="160" conditionals="29" coveredconditionals="12" methods="23" coveredmethods="13" elements="320" coveredelements="185" complexity="0" loc="268" ncloc="268" packages="7" files="13" classes="13"/>
     <package name="usersApp">
       <metrics statements="19" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="app.js" path="C:\Users\Protu\Desktop\Σχολη\PROJECTS\node-cf\usersApp\app.js">
@@ -31,7 +31,7 @@
       </file>
     </package>
     <package name="usersApp.controllers">
-      <metrics statements="146" coveredstatements="47" conditionals="17" coveredconditionals="3" methods="14" coveredmethods="3"/>
+      <metrics statements="146" coveredstatements="59" conditionals="17" coveredconditionals="4" methods="14" coveredmethods="5"/>
       <file name="auth.controller.js" path="C:\Users\Protu\Desktop\Σχολη\PROJECTS\node-cf\usersApp\controllers\auth.controller.js">
         <metrics statements="26" coveredstatements="5" conditionals="9" coveredconditionals="0" methods="2" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
@@ -62,7 +62,7 @@
         <line num="41" count="0" type="stmt"/>
       </file>
       <file name="user.controller.js" path="C:\Users\Protu\Desktop\Σχολη\PROJECTS\node-cf\usersApp\controllers\user.controller.js">
-        <metrics statements="68" coveredstatements="35" conditionals="8" coveredconditionals="3" methods="6" coveredmethods="3"/>
+        <metrics statements="68" coveredstatements="47" conditionals="8" coveredconditionals="4" methods="6" coveredmethods="5"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
@@ -102,22 +102,22 @@
         <line num="79" count="3" type="stmt"/>
         <line num="80" count="3" type="stmt"/>
         <line num="85" count="1" type="stmt"/>
-        <line num="86" count="0" type="stmt"/>
-        <line num="88" count="0" type="stmt"/>
-        <line num="90" count="0" type="stmt"/>
-        <line num="100" count="0" type="stmt"/>
-        <line num="101" count="0" type="stmt"/>
-        <line num="104" count="0" type="stmt"/>
+        <line num="86" count="1" type="stmt"/>
+        <line num="88" count="1" type="stmt"/>
+        <line num="90" count="1" type="stmt"/>
+        <line num="100" count="1" type="stmt"/>
+        <line num="101" count="1" type="stmt"/>
+        <line num="104" count="1" type="stmt"/>
         <line num="106" count="0" type="stmt"/>
         <line num="107" count="0" type="stmt"/>
         <line num="112" count="1" type="stmt"/>
-        <line num="113" count="0" type="stmt"/>
-        <line num="114" count="0" type="stmt"/>
-        <line num="116" count="0" type="stmt"/>
-        <line num="117" count="0" type="stmt"/>
-        <line num="119" count="0" type="cond" truecount="0" falsecount="2"/>
+        <line num="113" count="1" type="stmt"/>
+        <line num="114" count="1" type="stmt"/>
+        <line num="116" count="1" type="stmt"/>
+        <line num="117" count="1" type="stmt"/>
+        <line num="119" count="1" type="cond" truecount="1" falsecount="1"/>
         <line num="120" count="0" type="stmt"/>
-        <line num="123" count="0" type="stmt"/>
+        <line num="123" count="1" type="stmt"/>
         <line num="129" count="0" type="stmt"/>
         <line num="131" count="0" type="stmt"/>
         <line num="137" count="1" type="stmt"/>
@@ -208,23 +208,23 @@
         <metrics statements="20" coveredstatements="16" conditionals="12" coveredconditionals="8" methods="3" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
-        <line num="5" count="6" type="stmt"/>
-        <line num="7" count="6" type="cond" truecount="2" falsecount="0"/>
-        <line num="9" count="6" type="cond" truecount="1" falsecount="1"/>
+        <line num="5" count="8" type="stmt"/>
+        <line num="7" count="8" type="cond" truecount="2" falsecount="0"/>
+        <line num="9" count="8" type="cond" truecount="1" falsecount="1"/>
         <line num="10" count="0" type="stmt"/>
-        <line num="13" count="6" type="stmt"/>
-        <line num="15" count="6" type="cond" truecount="1" falsecount="1"/>
-        <line num="16" count="6" type="stmt"/>
-        <line num="18" count="6" type="stmt"/>
+        <line num="13" count="8" type="stmt"/>
+        <line num="15" count="8" type="cond" truecount="1" falsecount="1"/>
+        <line num="16" count="8" type="stmt"/>
+        <line num="18" count="8" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
         <line num="25" count="4" type="stmt"/>
-        <line num="27" count="4" type="cond" truecount="3" falsecount="1"/>
+        <line num="27" count="6" type="cond" truecount="3" falsecount="1"/>
         <line num="28" count="0" type="stmt"/>
-        <line num="31" count="4" type="stmt"/>
-        <line num="34" count="4" type="stmt"/>
-        <line num="36" count="4" type="cond" truecount="1" falsecount="1"/>
+        <line num="31" count="6" type="stmt"/>
+        <line num="34" count="6" type="stmt"/>
+        <line num="36" count="6" type="cond" truecount="1" falsecount="1"/>
         <line num="37" count="0" type="stmt"/>
-        <line num="40" count="4" type="stmt"/>
+        <line num="40" count="6" type="stmt"/>
         <line num="44" count="1" type="stmt"/>
       </file>
     </package>
@@ -292,10 +292,10 @@
         <line num="14" count="2" type="stmt"/>
         <line num="15" count="2" type="stmt"/>
         <line num="17" count="2" type="stmt"/>
-        <line num="21" count="6" type="stmt"/>
-        <line num="23" count="6" type="stmt"/>
-        <line num="24" count="6" type="stmt"/>
-        <line num="27" count="6" type="stmt"/>
+        <line num="21" count="8" type="stmt"/>
+        <line num="23" count="8" type="stmt"/>
+        <line num="24" count="8" type="stmt"/>
+        <line num="27" count="8" type="stmt"/>
         <line num="29" count="0" type="stmt"/>
         <line num="34" count="0" type="stmt"/>
         <line num="35" count="0" type="stmt"/>
@@ -320,11 +320,11 @@
         <line num="6" count="1" type="stmt"/>
         <line num="10" count="1" type="stmt"/>
         <line num="11" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
-        <line num="19" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
+        <line num="15" count="3" type="stmt"/>
+        <line num="17" count="3" type="stmt"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="19" count="3" type="stmt"/>
+        <line num="20" count="3" type="stmt"/>
         <line num="22" count="0" type="stmt"/>
         <line num="23" count="0" type="stmt"/>
         <line num="27" count="1" type="stmt"/>

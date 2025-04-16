@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.47% </span>
+                <span class="strong">69.11% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>35/68</span>
-            </div>
-        
-            
-            <div class='fl pad1y space-right2'>
-                <span class="strong">37.5% </span>
-                <span class="quiet">Branches</span>
-                <span class='fraction'>3/8</span>
+                <span class='fraction'>47/68</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">50% </span>
-                <span class="quiet">Functions</span>
-                <span class='fraction'>3/6</span>
+                <span class="quiet">Branches</span>
+                <span class='fraction'>4/8</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">51.47% </span>
+                <span class="strong">83.33% </span>
+                <span class="quiet">Functions</span>
+                <span class='fraction'>5/6</span>
+            </div>
+        
+            
+            <div class='fl pad1y space-right2'>
+                <span class="strong">69.11% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>35/68</span>
+                <span class='fraction'>47/68</span>
             </div>
         
             
@@ -306,13 +306,11 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -320,11 +318,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -333,17 +333,17 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -463,12 +463,12 @@ exports.create = async(req, resp) =&gt; {
 }
 &nbsp;
 &nbsp;
-exports.update = <span class="fstat-no" title="function not covered" >as</span>ync(req, resp) =&gt; {
-    const username = <span class="cstat-no" title="statement not covered" >req.body.username;</span>
+exports.update = async(req, resp) =&gt; {
+    const username = req.body.username;
   
-<span class="cstat-no" title="statement not covered" >    console.log("Update user with username", username);</span>
+    console.log("Update user with username", username);
   
-    const updateUser = <span class="cstat-no" title="statement not covered" >{</span>
+    const updateUser = {
       name: req.body.name,
       surname: req.body.surname,
       email: req.body.email,
@@ -478,11 +478,11 @@ exports.update = <span class="fstat-no" title="function not covered" >as</span>y
       }
     };
   
-<span class="cstat-no" title="statement not covered" >    try {</span>
-      const result = <span class="cstat-no" title="statement not covered" >await User.findOneAndUpdate({username: username}, //Πρώτο όρισμα: Ποιον χρήστη ψάχνουμε;</span>
+    try {
+      const result = await User.findOneAndUpdate({username: username}, //Πρώτο όρισμα: Ποιον χρήστη ψάχνουμε;
         updateUser,  //Δεύτερο όρισμα: Ποιες τιμές θέλουμε να ενημερώσουμε;
         {new:true}); //Τρίτο όρισμα: Επιστρέφει το νέο αντικείμενο αντί για το παλιό.
-<span class="cstat-no" title="statement not covered" >      resp.status(200).json({status:true, data:result});</span>
+      resp.status(200).json({status:true, data:result});
     } catch (err) {
 <span class="cstat-no" title="statement not covered" >      console.log("Problem in updating user", err);</span>
 <span class="cstat-no" title="statement not covered" >      resp.status(400).json({status:false, data: err});</span>
@@ -490,18 +490,18 @@ exports.update = <span class="fstat-no" title="function not covered" >as</span>y
 }
 &nbsp;
 &nbsp;
-exports.deleteByUsername = <span class="fstat-no" title="function not covered" >as</span>ync(req, resp) =&gt; {
-    const username = <span class="cstat-no" title="statement not covered" >req.params.username</span>
-<span class="cstat-no" title="statement not covered" >    console.log("Delete user with username", username);</span>
+exports.deleteByUsername = async(req, resp) =&gt; {
+    const username = req.params.username
+    console.log("Delete user with username", username);
 &nbsp;
-<span class="cstat-no" title="statement not covered" >    try {</span>
-        const result = <span class="cstat-no" title="statement not covered" >await User.findOneAndDelete({username: username})</span>
+    try {
+        const result = await User.findOneAndDelete({username: username})
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        if (!result) {</span>
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (!result) {
 <span class="cstat-no" title="statement not covered" >            return resp.status(404).json({status: false, message: "User not found"});</span>
         }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >        resp.status(200).json({status: true, data: result})</span>
+        resp.status(200).json({status: true, data: result})
 &nbsp;
 &nbsp;
 &nbsp;
@@ -544,7 +544,7 @@ exports.deleteByEmail = <span class="fstat-no" title="function not covered" >as<
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-04-16T13:52:10.742Z
+                at 2025-04-16T14:19:23.657Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
