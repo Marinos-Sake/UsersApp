@@ -1,5 +1,9 @@
 node_modules/
 jestApp/
+myapp1/
+myapp2/
+myapp3/
+myapp4/
 .env
 
 logs/
