@@ -154,6 +154,31 @@ exports.deleteByEmail = async(req, resp) => {
 
         resp.status(400).json({status: false, data: err})
     }
+}    
 
-    //localhost:3001/api/users/test10 (user who want to delete "his username")/email/lakis@aueb.gr (user who want to delete with email)
-}
+    exports.updateOnlyPassword = async(req, resp) => {
+        console.log("Update password for user")
+        const username = req.params.username
+       
+        const saltorRounds = 10;
+        let hashedPassword = "";
+
+        if (req.body.password) {
+            hashedPassword = await bcrypt.hash(req.body.password, saltorRounds)
+        }
+        const newPassword = {
+            password: hashedPassword
+        }
+
+        try {
+            const result = await User.findOneAndUpdate({username}, newPassword, {new:true})
+            if (result) {
+                return resp.status(200).json({message: "Password updated succesfully", user: result})
+            }
+
+        } catch (error) {
+            console.log(error)
+            return resp.status(500).json({message: "An error occurred", error})
+        }
+         
+    }
