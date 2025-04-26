@@ -13,5 +13,5 @@ router.post('/', verifyToken, verifyRoles("ADMIN"), userController.create)
 router.patch('/:username', verifyToken, verifyRoles("ADMIN"), userController.update)
 router.delete('/:username', verifyToken, verifyRoles("ADMIN"), userController.deleteByUsername)
 router.delete('/:username/email/:email', verifyToken, verifyRoles("ADMIN"), userController.deleteByEmail)
-router.patch('/:username/password', verifyToken, verifyRoles("ADMIN"), userController.updateOnlyPassword)
+router.patch('/:username/password', verifyToken, userController.updateOnlyPassword)
 module.exports = router;

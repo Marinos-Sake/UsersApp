@@ -157,28 +157,40 @@ exports.deleteByEmail = async(req, resp) => {
 }    
 
     exports.updateOnlyPassword = async(req, resp) => {
-        console.log("Update password for user")
-        const username = req.params.username
-       
+        const username = req.params.username;
+        const loggedInUsername = req.user.username;
+        const rolesFromToken = req.user.roles || [];
+    
+        const isAdmin = rolesFromToken.includes('ADMIN');
+        const isOwner = username === loggedInUsername;
+    
+        if (!isAdmin && !isOwner) {
+            return resp.status(403).json({message: "Forbidden: You can only change your own password"});
+        }
+    
         const saltorRounds = 10;
         let hashedPassword = "";
-
+    
         if (req.body.password) {
-            hashedPassword = await bcrypt.hash(req.body.password, saltorRounds)
+            hashedPassword = await bcrypt.hash(req.body.password, saltorRounds);
+        } else {
+            return resp.status(400).json({message: "No password provided"});
         }
+    
         const newPassword = {
             password: hashedPassword
         }
-
+    
         try {
             const result = await User.findOneAndUpdate({username}, newPassword, {new:true})
+    
             if (result) {
-                return resp.status(200).json({message: "Password updated succesfully", user: result})
+                return resp.status(200).json({message: "Password updated successfully", user: result})
+            } else {
+                return resp.status(404).json({message: "User not found"})
             }
-
         } catch (error) {
-            console.log(error)
+            console.log("Error during password update", error)
             return resp.status(500).json({message: "An error occurred", error})
         }
-         
-    }
+}
