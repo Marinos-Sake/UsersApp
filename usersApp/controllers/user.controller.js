@@ -202,13 +202,14 @@ exports.checkDuplicateEmail = async(req, res) => {
   try {
     const result = await User.findOne({ email: email });
     if (result) {
-      res.status(400).json({ status: false, data: result });
+        
+        res.status(400).json({ status: false, data: result });
     } else {
-      res.status(200).json({ status: true, data: result });
+        res.status(200).json({ status: true, data: result });
     }
   } catch (err) {
-    res.status(400).json({ status: false, data: err });
-    console.error(`Problem in finding email address: ${email}`, err);
+        res.status(400).json({ status: false, data: err });
+        console.error(`Problem in finding email address: ${email}`, err);
   }
 }
 
