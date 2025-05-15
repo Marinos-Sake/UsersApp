@@ -51,7 +51,17 @@ async function googleAuth(code) {
 
     const userInfo = await ticket.getPayload();
     console.log("Google User", userInfo)
-    return { user: userInfo, tokens}
+    // return { user: userInfo, tokens}
+
+    const user = {
+      username: userInfo.given_name,
+      email: userInfo.email,
+      role: ["EDITOR", "READER"]
+    }
+
+    const token = this.generateAccessToken(user)
+    return token;
+
   } catch (err) {
     console.log("Error in google authentication", err)
     return { eer: "Failed to authenticate with google"}
