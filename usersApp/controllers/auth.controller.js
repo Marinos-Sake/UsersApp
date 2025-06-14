@@ -7,7 +7,7 @@ exports.login = async(req, res) =>{
 
   const username = req.body.username;
   const password = req.body.password;
-  //gaga
+  
   try {
     const result = await User.findOne({username: username},{username:1, email:1, password:1, roles:1})
     console.log("User", result);
